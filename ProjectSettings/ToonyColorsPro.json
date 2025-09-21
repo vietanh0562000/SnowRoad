@@ -1,0 +1,26 @@
+{
+    "AutoNames": true,
+    "SubFolders": true,
+    "OverwriteConfig": false,
+    "LoadAllShaders": false,
+    "CustomOutputPath": "\\JMO Assets\\Toony Colors Pro\\Shaders Generated",
+    "LastImplementationExportImportPath": "D:/Work/Hole_People/Data/hole/Assets",
+    "OpenedFoldouts": [
+        "LIGHTING",
+        "TRANSPARENCY/BLENDING",
+        "SURFACE",
+        "STYLIZATION",
+        "THIRD PARTY PLUGINS",
+        "OPTIONS",
+        "SHADER STATES",
+        "SPECIAL EFFECTS"
+    ],
+    "UseCustomFont": true,
+    "CustomFont": {
+        "fileID": 12800000,
+        "guid": "8a406076b7de34849be1f35585875a66",
+        "type": 3
+    },
+    "CustomFontInitialized": true,
+    "Upgrade_Hybrid1toHybrid2_Done": true
+}

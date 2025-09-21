@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b63aa4a0fcd9d14d8abbfec84d1fdd9, type: 3}
+  m_Name: MaterialStorage
+  m_EditorClassIdentifier: 
+  materials:
+  - id: -1
+    material: {fileID: 2100000, guid: 97d70d567b94fc5468675f503c33c3cd, type: 2}
+    materialHole: {fileID: 2100000, guid: 97d70d567b94fc5468675f503c33c3cd, type: 2}
+    mesh: {fileID: 4300000, guid: 4e5a7a76285d5c04fbf910db34a53411, type: 2}
+    color: {r: 0.40784317, g: 0.4156863, b: 0.42352945, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+  - id: 0
+    material: {fileID: 2100000, guid: 1610044d558c3974185accd26662be6d, type: 2}
+    materialHole: {fileID: 2100000, guid: 1610044d558c3974185accd26662be6d, type: 2}
+    mesh: {fileID: 4300000, guid: 4e5a7a76285d5c04fbf910db34a53411, type: 2}
+    color: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 2048
+  - id: 1
+    material: {fileID: 2100000, guid: 47204adec55f29c4dbfe26f89f0c5569, type: 2}
+    materialHole: {fileID: 2100000, guid: aa324e2036790a14da07a7cf06c31a74, type: 2}
+    mesh: {fileID: 4300000, guid: 4e5a7a76285d5c04fbf910db34a53411, type: 2}
+    color: {r: 0.20000002, g: 0.43137258, b: 0.74509805, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 2048
+  - id: 2
+    material: {fileID: 2100000, guid: 5b81ade2c7ceb1c41ba5fb4322c0894f, type: 2}
+    materialHole: {fileID: 2100000, guid: 197862fadc1121944b0f8e9f54851bf6, type: 2}
+    mesh: {fileID: 4300000, guid: 19b2351dfa9934742b99a1960d8b5424, type: 2}
+    color: {r: 0.08235294, g: 0.5568628, b: 0.6392157, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 65536
+  - id: 3
+    material: {fileID: 2100000, guid: de0ea840faaa196448efb7f05ca6c249, type: 2}
+    materialHole: {fileID: 2100000, guid: bd200efdf0c84314fa04e7971a6729aa, type: 2}
+    mesh: {fileID: 4300000, guid: 2faad546a8e7d0b44aafba2205fd6bee, type: 2}
+    color: {r: 0.09411766, g: 0.29411766, b: 0.06666667, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 1024
+  - id: 4
+    material: {fileID: 2100000, guid: 84d21babefeea7543818618ed0fd08bd, type: 2}
+    materialHole: {fileID: 2100000, guid: 4bcfa05dad40c3244a85ca8a8819613b, type: 2}
+    mesh: {fileID: 4300000, guid: 302380fa5daf09d46bcd1d1037e51ec8, type: 2}
+    color: {r: 0.79215693, g: 0.48235297, b: 0.16862746, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 16384
+  - id: 5
+    material: {fileID: 2100000, guid: af85d9bdc2231a341b8c47354acd5dfb, type: 2}
+    materialHole: {fileID: 2100000, guid: 563d11423ea2a9d408b2aa2180456e8b, type: 2}
+    mesh: {fileID: 4300000, guid: d5dadf14aae13964ca7fed456c584fe7, type: 2}
+    color: {r: 0.78823537, g: 0.49411768, b: 0.53333336, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 4096
+  - id: 6
+    material: {fileID: 2100000, guid: f1f4601eee404c643878be26e7790926, type: 2}
+    materialHole: {fileID: 2100000, guid: 110ef09fe0c91574ab70b61efc2881cb, type: 2}
+    mesh: {fileID: 4300000, guid: 5611acbd15fd9194ca8b108f9fb349b0, type: 2}
+    color: {r: 0.78823537, g: 0.34509805, b: 0.25490198, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 512
+  - id: 7
+    material: {fileID: 2100000, guid: a24fe20bd36ff5b478eea6fb40b274f4, type: 2}
+    materialHole: {fileID: 2100000, guid: ecc885db42e77c34eb1adc39b4cb0003, type: 2}
+    mesh: {fileID: 4300000, guid: 38e6406d7004bfc43b717243b6d9355a, type: 2}
+    color: {r: 0.7490196, g: 0.63529414, b: 0.1764706, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 8192
+  - id: 8
+    material: {fileID: 2100000, guid: 73099b507e1f05646ab6e1eb32a47428, type: 2}
+    materialHole: {fileID: 2100000, guid: 0d08947be85ad28418910eee691052e8, type: 2}
+    mesh: {fileID: 4300000, guid: ace8d45e46b745c42a078a23d1ea0c5e, type: 2}
+    color: {r: 0.5568628, g: 0.24313727, b: 0.76470596, a: 1}
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 32768
