@@ -32,6 +32,10 @@ namespace PuzzleGames
             var level     = LevelDataController.instance.Level;
             var levelJson = LoadLevelManager.instance.ReadLevelData(level);
             var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
+
+            if(levelData==null)
+                return;  
+            
             _imgBtnPlay.sprite    = GetBackgroundSprite(levelData.difficulty);
             _txtPlay.fontMaterial = GetFontColor(levelData.difficulty);
 

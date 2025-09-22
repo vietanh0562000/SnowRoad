@@ -6,7 +6,6 @@ namespace PuzzleGames
     using com.ootii.Messages;
     using Core.Utilities.Extension;
     using BasePuzzle.PuzzlePackages;
-    using HoleBox;
     using TMPro;
     using UnityEngine;
     using UnityEngine.EventSystems;
@@ -75,14 +74,8 @@ namespace PuzzleGames
                     CloseView();
                     break;
                 case PowerupKind.Helidrop:
-                    var point = TemporaryBoardVisualize.Instance.GetRandomStickmanBox();
-                    tutorialHighlight.UpdateHoleForWorld(point, new Vector2(0.15f, 0.08f));
-                    handTutorial.ShowAtWorld(point);
                     break;
                 case PowerupKind.RainbowHole:
-                    var holePoint = TemporaryBoardVisualize.Instance.GetRandomHole();
-                    tutorialHighlight.UpdateHoleForWorld(holePoint, new Vector2(0.2f, 0.12f));
-                    handTutorial.ShowAtWorld(holePoint);
                     break;
             }
         }

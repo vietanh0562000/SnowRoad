@@ -4,7 +4,6 @@ namespace PuzzleGames
     using ChuongCustom.ScreenManager;
     using Core.Utilities.Extension;
     using DG.Tweening;
-    using HoleBox;
     using UnityEngine;
     using UnityEngine.EventSystems;
 
@@ -20,9 +19,9 @@ namespace PuzzleGames
             
             DOVirtual.DelayedCall(0.5f, () =>
             {
-                var holePoint = TemporaryBoardVisualize.Instance.GetRandomHole();
+                /*var holePoint = TemporaryBoardVisualize.Instance.GetRandomHole();
                 tutorialHighlight.UpdateHoleForWorld(holePoint, new Vector2(0.24f, 0.15f));
-                handTutorial.ShowAtWorld(holePoint);
+                handTutorial.ShowAtWorld(holePoint);*/
             });
         }
 

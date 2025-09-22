@@ -4,7 +4,6 @@ namespace PuzzleGames
 {
     using com.ootii.Messages;
     using BasePuzzle.Core.Scripts.ABTesting.Scripts.Model;
-    using HoleBox;
 
     public class RainbowHoleBtn : BoosterBtn
     {
@@ -17,7 +16,7 @@ namespace PuzzleGames
                 return;
             }
 
-            if (TemporaryBoardVisualize.Instance.ExistStickmanMoving())
+            /*if (TemporaryBoardVisualize.Instance.ExistStickmanMoving())
             {
                 UIToastManager.Instance.Show("Please wait until all stickmen are placed");
                 return;
@@ -27,7 +26,7 @@ namespace PuzzleGames
             {
                 UnuseBooster();
                 return;
-            }
+            }*/
 
             base.OnClickButton();
         }
@@ -37,14 +36,14 @@ namespace PuzzleGames
         {
             UpdateCount();
             IsActivating                                    = false;
-            TemporaryBoardVisualize.Instance.UseRainbowHole = false;
+            //TemporaryBoardVisualize.Instance.UseRainbowHole = false;
         }
 
         public override void ActivateBooster()
         {
             WindowManager.Instance.OpenWindow<TooltipPanel>(onLoaded: panel => { panel.ShowTooltip(this); });
             IsActivating                                    = true;
-            TemporaryBoardVisualize.Instance.UseRainbowHole = true;
+            //TemporaryBoardVisualize.Instance.UseRainbowHole = true;
         }
 
         public override int          LevelUnlock => ServerConfig.Instance<ValueRemoteConfig>().levelUnlockBooserRainbow;

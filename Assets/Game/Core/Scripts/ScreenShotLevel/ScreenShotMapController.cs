@@ -148,7 +148,6 @@ public class ScreenShotMapController : MonoBehaviour
             }
 
             levelLoader.CreateMapFromTxt(levelTxt);
-            SetMapSize(levelLoader.MapWidth, levelLoader.MapHeight);
             var a = ScreenShot();
             gameObject.SetActive(false);
             Destroy(gameObject);

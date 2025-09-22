@@ -11,7 +11,6 @@ namespace BasePuzzle.PuzzlePackages.Core
 {
     using BasePuzzle.Core.Scripts.ABTesting.Scripts.Model;
     using PuzzleGames;
-    using HoleBox;
 
     public class LoadLevelManager : NMSingleton<LoadLevelManager>
     {

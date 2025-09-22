@@ -3,7 +3,6 @@
     using System;
     using BasePuzzle.Core.Scripts.ABTesting.Scripts.Model;
     using BasePuzzle.PuzzlePackages;
-    using HoleBox;
     using Sirenix.OdinInspector;
     using UnityEngine;
 
@@ -62,7 +61,8 @@
             StartGame();
             isPlayed = true;
         }
-
+        
+        [Button]
         private void StartGame()
         {
             if (CurrentState == GameState.Prepare)
@@ -145,7 +145,6 @@
 
             Action loadHome = () =>
             {
-                MovementThread.Instance.StopActionQueue();
                 LoadSceneManager.Instance.LoadScene("Home");
             };
 

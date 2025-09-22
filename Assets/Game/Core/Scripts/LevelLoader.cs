@@ -5,103 +5,90 @@ using UnityEngine;
 
 namespace PuzzleGames
 {
-    using HoleBox;
-    using TMPro;
+	using TMPro;
 
-    public class LevelLoader : MonoBehaviour
-    {
+	public class LevelLoader : MonoBehaviour
+	{
 #if UNITY_EDITOR
-        [SerializeField] private GameObject _btnBackToLE;
-        [SerializeField] private string     _txtLevel;
-        [SerializeField] private TMP_Text   _txtLevelEditor;
+		[SerializeField] private GameObject _btnBackToLE;
+		[SerializeField] private string     _txtLevel;
+		[SerializeField] private TMP_Text   _txtLevelEditor;
 #endif
 
-        [SerializeField] private TemporaryBoardVisualize   _boardVisualize;
-        [SerializeField] private CameraCenteringController _cameraCentering;
-        [SerializeField] private BarrierCheck              _barrierCheck;
 
-        public int MapWidth  => _boardVisualize.Matrix.x;
-        public int MapHeight => _boardVisualize.Matrix.y;
-
-        private void Start()
-        {
-            var levelJson = TempDataHandler.Get<string>(TempDataKeys.CURRENT_LEVEL_JSON_DATA);
+		private void Start()
+		{
+			var levelJson=TempDataHandler.Get<string>(TempDataKeys.CURRENT_LEVEL_JSON_DATA);
 
 #if UNITY_EDITOR
-            bool fromEditor = TempDataHandler.Get(TempDataKeys.OPEN_LEVEL_FROM_EDITOR, false);
-            if (_btnBackToLE != null)
-                _btnBackToLE.SetActive(fromEditor);
+			bool fromEditor=TempDataHandler.Get(TempDataKeys.OPEN_LEVEL_FROM_EDITOR,false);
+			if(_btnBackToLE!=null)
+				_btnBackToLE.SetActive(fromEditor);
 
-            if (_txtLevelEditor != null && fromEditor)
-            {
-                var level = TempDataHandler.Get<string>(TempDataKeys.CURRENT_LEVEL_FROM_LEVEL_EDITOR);
-                if (!string.IsNullOrEmpty(level))
-                {
-                    _txtLevelEditor.gameObject.SetActive(true);
-                    _txtLevelEditor.text = $"Level: {level}";
-                }
-            }
+			if(_txtLevelEditor!=null && fromEditor)
+			{
+				var level=TempDataHandler.Get<string>(TempDataKeys.CURRENT_LEVEL_FROM_LEVEL_EDITOR);
+				if(!string.IsNullOrEmpty(level))
+				{
+					_txtLevelEditor.gameObject.SetActive(true);
+					_txtLevelEditor.text=$"Level: {level}";
+				}
+			}
 
-            if (string.IsNullOrEmpty(levelJson)) levelJson = _txtLevel;
+			if(string.IsNullOrEmpty(levelJson)) levelJson=_txtLevel;
 #endif
-            var serializerSettings = new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore,
-                TypeNameHandling  = TypeNameHandling.All // Enables polymorphic deserialization
-            };
+			var serializerSettings=new JsonSerializerSettings
+			{
+				NullValueHandling=NullValueHandling.Ignore,
+				TypeNameHandling =TypeNameHandling.All // Enables polymorphic deserialization
+			};
 
-            var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
-            var mapJson   = JsonCompressing.Decompressing(levelData.mapData);
-            var mapData   = JsonConvert.DeserializeObject<LevelData>(mapJson, serializerSettings);
+			/*var levelData=JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
+			var mapJson  =JsonCompressing.Decompressing(levelData.mapData);
+			var mapData  =JsonConvert.DeserializeObject<LevelData>(mapJson,serializerSettings);
 
-            CreateMap(mapData);
+			CreateMap(mapData);
 
-            var currentLevel = TempDataHandler.Get(TempDataKeys.CURRENT_LEVEL_FROM_HOME, 0);
-            Debug.LogError($"CurrentLevel: {currentLevel}");
-            
-            LevelManager.Instance.SetLevelData(currentLevel, mapJson, levelData.difficulty);
-        }
+			var currentLevel=TempDataHandler.Get(TempDataKeys.CURRENT_LEVEL_FROM_HOME,0);
+			Debug.LogError($"CurrentLevel: {currentLevel}");
 
-        public void CreateMapFromTxt(string txt)
-        {
-            var levelData = JsonConvert.DeserializeObject<TxtLevelData>(txt);
-            var mapJson   = JsonCompressing.Decompressing(levelData.mapData);
-            var mapData   = JsonConvert.DeserializeObject<LevelData>(mapJson);
+			LevelManager.Instance.SetLevelData(currentLevel,mapJson,levelData.difficulty);*/
+		}
 
-            CreateMap(mapData, true);
-        }
+		public void CreateMapFromTxt(string txt)
+		{
+			var levelData=JsonConvert.DeserializeObject<TxtLevelData>(txt);
+			var mapJson  =JsonCompressing.Decompressing(levelData.mapData);
+			var mapData  =JsonConvert.DeserializeObject<LevelData>(mapJson);
 
-        private void CreateMap(LevelData data, bool forScreenShot = false)
-        {
-            StickmanTransporter.Instance.ReleaseStickman();
-            _boardVisualize.SetLevel(data);
-            _cameraCentering.CenterCamera(_boardVisualize.Matrix);
-            _barrierCheck.GetBarrierGroup();
-        }
+			CreateMap(mapData,true);
+		}
 
-        /// <summary>
-        /// Direct call from UIs, Test
-        /// </summary>
-        public static void LoadLevel(int level)
-        {
-            Destroy(PoolHolder.PoolTransform.gameObject);
-            var levelJson = LoadLevelManager.instance.ReadLevelData(level);
-            TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_JSON_DATA, levelJson);
-            TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_FROM_HOME, level);
-            LoadSceneManager.Instance.LoadScene("GamePlay");
-        }
+		private void CreateMap(LevelData data,bool forScreenShot=false) { }
+
+		/// <summary>
+		/// Direct call from UIs, Test
+		/// </summary>
+		public static void LoadLevel(int level)
+		{
+			Destroy(PoolHolder.PoolTransform.gameObject);
+			var levelJson=LoadLevelManager.instance.ReadLevelData(level);
+			TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_JSON_DATA,levelJson);
+			TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_FROM_HOME,level);
+			LoadSceneManager.Instance.LoadScene("GamePlay");
+		}
 
 
 #if UNITY_EDITOR
-        public void ClickBtnBackToLevelEditor()
-        {
-            Destroy(PoolHolder.PoolTransform.gameObject);
+		public void ClickBtnBackToLevelEditor()
+		{
+			Destroy(PoolHolder.PoolTransform.gameObject);
 
 #if UNITY_ANDROID
-            GameViewUtils.SetFullScreen();
+			GameViewUtils.SetFullScreen();
 #endif
-            LoadSceneManager.Instance.LoadScene("LevelEditor");
-        }
+			LoadSceneManager.Instance.LoadScene("LevelEditor");
+		}
 #endif
-    }
+	}
 }

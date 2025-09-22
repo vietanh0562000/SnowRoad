@@ -3,7 +3,6 @@
 namespace PuzzleGames
 {
     using BasePuzzle.Core.Scripts.ABTesting.Scripts.Model;
-    using HoleBox;
 
     public class UFOBtn : BoosterBtn
     {
@@ -16,7 +15,7 @@ namespace PuzzleGames
                 return;
             }
             
-            if (TemporaryBoardVisualize.Instance.ExistStickmanMoving())
+            /*if (TemporaryBoardVisualize.Instance.ExistStickmanMoving())
             {
                 UIToastManager.Instance.Show("Please wait until all stickmen are placed");
                 return;
@@ -28,7 +27,7 @@ namespace PuzzleGames
                 IsActivating                            = false;
                 TemporaryBoardVisualize.Instance.UseUfo = false;
                 return;
-            }
+            }*/
 
             base.OnClickButton();
         }
@@ -37,7 +36,7 @@ namespace PuzzleGames
         {
             UpdateCount();
             IsActivating                            = false;
-            TemporaryBoardVisualize.Instance.UseUfo = false;
+            //TemporaryBoardVisualize.Instance.UseUfo = false;
         }
 
 
@@ -45,7 +44,7 @@ namespace PuzzleGames
         {
             WindowManager.Instance.OpenWindow<TooltipPanel>(onLoaded: panel => { panel.ShowTooltip(this); });
             IsActivating                            = true;
-            TemporaryBoardVisualize.Instance.UseUfo = true;
+           // TemporaryBoardVisualize.Instance.UseUfo = true;
         }
 
         public override int          LevelUnlock => ServerConfig.Instance<ValueRemoteConfig>().levelUnlockBooserUFO;

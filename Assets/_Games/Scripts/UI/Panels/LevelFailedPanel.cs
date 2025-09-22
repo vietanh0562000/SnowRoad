@@ -4,13 +4,10 @@ namespace PuzzleGames
     using ChuongCustom;
     using Cysharp.Threading.Tasks;
     using BasePuzzle.Core.Scripts.ABTesting.Scripts.Model;
-    using BasePuzzle.PuzzlePackages;
     using BasePuzzle.PuzzlePackages.Core;
-    using HoleBox;
     using Spine.Unity;
     using TMPro;
     using UnityEngine;
-    using UnityEngine.SceneManagement;
 
     [Popup("LevelFailedPanel")]
     public class LevelFailedPanel : BasePopup
@@ -108,8 +105,6 @@ namespace PuzzleGames
             {
                 Action loadScene = () =>
                 {
-                    MovementThread.Instance.StopActionQueue();
-                    PoolManager.Instance.ClearPool();
                     Destroy(PoolHolder.PoolTransform.gameObject);
                     LoadSceneManager.Instance.LoadScene("GamePlay");
                 };
