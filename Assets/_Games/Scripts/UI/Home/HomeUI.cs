@@ -31,21 +31,21 @@ namespace PuzzleGames
         {
             var level     = LevelDataController.instance.Level;
             var levelJson = LoadLevelManager.instance.ReadLevelData(level);
-            var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
+           // var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
 
-            if(levelData==null)
-                return;  
+            /*if(levelData==null)
+                return;  */
             
-            _imgBtnPlay.sprite    = GetBackgroundSprite(levelData.difficulty);
-            _txtPlay.fontMaterial = GetFontColor(levelData.difficulty);
+            _imgBtnPlay.sprite   =GetBackgroundSprite(LevelDifficulty.Easy);
+            _txtPlay.fontMaterial=GetFontColor(LevelDifficulty.Easy);
 
-            if (levelData == null)
+            /*if (levelData == null)
             {
                 _levelScroller.UpdateUI(level, LevelDifficulty.Easy);
                 return;
-            }
+            }*/
 
-            _levelScroller.UpdateUI(level, levelData.difficulty);
+            _levelScroller.UpdateUI(level, LevelDifficulty.Easy);
         }
 
         private Sprite GetBackgroundSprite(LevelDifficulty difficulty)
