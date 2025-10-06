@@ -12,15 +12,6 @@ namespace TRS.CaptureTool.Share
         public static void NativeShare(string filePath, string text = "", string url = "")
         {
             Debug.Log("NativeShare filePath: " + filePath);
-
-#if UNITY_IOS || UNITY_ANDROID
-            NativeShare nativeShare = new NativeShare().AddFile(filePath);
-            if (!string.IsNullOrEmpty(text))
-                nativeShare.SetText(text);
-            if (!string.IsNullOrEmpty(url))
-                nativeShare.SetUrl(url);
-            nativeShare.Share();
-#endif
         }
 
         public static void UploadToImgur(CaptureToolConfig config, string filePath, string description = "", string title = "", string album = "", System.Action<string, string> onComplete = null)
