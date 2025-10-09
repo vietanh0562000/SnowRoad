@@ -79,9 +79,9 @@ namespace PuzzleGames
                 var level = currentLevel + i;
 
                 var levelJson = LoadLevelManager.instance.ReadLevelData(level);
-                var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
+               // var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
 
-                var diff = levelData.difficulty;
+                var diff = LevelDifficulty.Easy;
 
                 _levelItems[i].SetLevel(GetBackgroundSprite(diff), level, GetColorText(diff));
 
