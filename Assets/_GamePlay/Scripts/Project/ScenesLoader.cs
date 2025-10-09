@@ -9,7 +9,7 @@ public class ScenesLoader : MonoBehaviour
     public int LastLoadedLevelNumber { get; private set; }
 
     [SerializeField] private string tutorialSceneName = "Tutorial";
-    [SerializeField] private string menuSceneName = "Menu";
+    [SerializeField] private string menuSceneName = "Home";
     [SerializeField] private string baseSceneName = "Base";
     [SerializeField] private string levelSceneName = "Level";
 

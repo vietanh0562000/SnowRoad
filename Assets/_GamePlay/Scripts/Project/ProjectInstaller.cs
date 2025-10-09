@@ -24,8 +24,6 @@ public class ProjectInstaller : MonoInstaller
 
         BindPlayerData();
         
-        Container.BindInstances(adsManager, levelsInfoProvider);
-
         Container.Bind<ProjectInitializer>().AsSingle().NonLazy();
     }
 

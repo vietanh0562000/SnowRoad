@@ -9,12 +9,10 @@ public class TutorialUI : MonoBehaviour
     [SerializeField] private PanelAnimator tutorialCompletedPanel;
     [Space]
     [SerializeField] private AnimatedButton loadMenuButton;
-    [SerializeField] private AnimatedButton loadLevelButton;
 
     [Zenject.Inject]
     private void Init(Zenject.SignalBus signalBus){
         loadMenuButton.OnClick.AddListener(() => signalBus.Fire<LoadMenuSignal>());
-        loadLevelButton.OnClick.AddListener(() => signalBus.Fire(new LoadLevelSignal(1)));
 
         background.alpha = 0;
     }
