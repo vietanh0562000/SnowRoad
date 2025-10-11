@@ -1,13 +1,16 @@
 using System;
+using System.Runtime.InteropServices;
 using com.ootii.Messages;
 using BasePuzzle.PuzzlePackages;
 using PuzzleGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class TestAccountManager : MonoBehaviour
 {
+    [Inject] SignalBus signalBus;
     [SerializeField] private TMP_InputField _iptLevel;
     [SerializeField] private Toggle         _cbTopUI, _cbBoosterUI;
     [SerializeField] private GameObject     _topUI,   _boosterUI, _panelTestAccount;
@@ -54,7 +57,7 @@ public class TestAccountManager : MonoBehaviour
     {
         if (!int.TryParse(_iptLevel.text, out int level)) return;
         LevelDataController.instance.LevelData.level = level;
-        LevelLoader.LoadLevel(level);
+        LevelLoader.LoadLevel(level, signalBus);
     }
 
     public void ClickBtnAddGold(int amount)

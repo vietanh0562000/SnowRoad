@@ -4,7 +4,6 @@ using System;
 
 public class ProjectInstaller : MonoInstaller
 {
-    [SerializeField] public AdsManager adsManager;
     [SerializeField] public LevelsInfoProvider levelsInfoProvider;
     [SerializeField] public Localization localization;
     [SerializeField] public ScenesLoader scenesLoader;
@@ -61,6 +60,8 @@ public class ProjectInstaller : MonoInstaller
     }
 
     private void BindPlayerData(){
+        Container.BindInstance(levelsInfoProvider).AsSingle();
+        
         _saveSystem = new SaveSystem<PlayerData>();
         _data = _saveSystem.LoadData();
         Container.BindInstance(_data).AsCached().NonLazy();

@@ -2,6 +2,7 @@ using System;
 using BasePuzzle.PuzzlePackages.Core;
 using Newtonsoft.Json;
 using UnityEngine;
+using Zenject;
 
 namespace PuzzleGames
 {
@@ -13,6 +14,8 @@ namespace PuzzleGames
 		[SerializeField] private GameObject _btnBackToLE;
 		[SerializeField] private string     _txtLevel;
 		[SerializeField] private TMP_Text   _txtLevelEditor;
+		
+		
 #endif
 
 
@@ -69,13 +72,11 @@ namespace PuzzleGames
 		/// <summary>
 		/// Direct call from UIs, Test
 		/// </summary>
-		public static void LoadLevel(int level)
+		public static void LoadLevel(int level, SignalBus signalBus)
 		{
 			Destroy(PoolHolder.PoolTransform.gameObject);
-			var levelJson=LoadLevelManager.instance.ReadLevelData(level);
-			TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_JSON_DATA,levelJson);
-			TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_FROM_HOME,level);
-			LoadSceneManager.Instance.LoadScene("GamePlay");
+			
+			signalBus.Fire(new LoadLevelSignal(level));
 		}
 
 

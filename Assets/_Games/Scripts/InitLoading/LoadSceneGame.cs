@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace PuzzleGames
 {
@@ -8,7 +9,7 @@ namespace PuzzleGames
     public class LoadSceneGame : MonoBehaviour
     {
         [SerializeField] private string nextSceneName = "Home";
-
+        [Inject] SignalBus _signalBus;
         private IEnumerator Start()
         {
             yield return null;
@@ -29,10 +30,7 @@ namespace PuzzleGames
 
         private void LoadLevel(int level)
         {
-            var levelJson = LoadLevelManager.instance.ReadLevelData(level);
-            TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_JSON_DATA, levelJson);
-            TempDataHandler.Set(TempDataKeys.CURRENT_LEVEL_FROM_HOME, level);
-            LoadSceneManager.Instance.LoadScene("GamePlay");
+            _signalBus.Fire(new LoadLevelSignal(level));
         }
     }
 }

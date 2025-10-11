@@ -1,4 +1,6 @@
-﻿namespace PuzzleGames
+﻿using Zenject;
+
+namespace PuzzleGames
 {
     using System;
     using BasePuzzle.Core.Scripts.ABTesting.Scripts.Model;
@@ -17,6 +19,7 @@
 
     public class GameManager : Singleton<GameManager>
     {
+        [Inject] SignalBus _signalBus;
         private bool isPlayed;
         private bool firstLose;
 
@@ -226,7 +229,7 @@
             }
             else
             { 
-                LevelLoader.LoadLevel(LevelDataController.instance.Level);
+                LevelLoader.LoadLevel(LevelDataController.instance.Level, _signalBus);
             }
         }
 

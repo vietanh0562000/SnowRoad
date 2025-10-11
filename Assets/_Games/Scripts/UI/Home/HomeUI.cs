@@ -3,6 +3,7 @@ using BasePuzzle.PuzzlePackages.Core;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace PuzzleGames
 {
@@ -14,6 +15,7 @@ namespace PuzzleGames
 
     public class HomeUI : MonoBehaviour
     {
+        [Inject] SignalBus _signalBus;
         [SerializeField]           private LevelScroller _levelScroller;
         [SerializeField, Space(6)] private Image         _imgBtnPlay;
         [SerializeField, Space(6)] private TMP_Text      _txtPlay;
@@ -30,7 +32,7 @@ namespace PuzzleGames
         private void UpdateUI()
         {
             var level     = LevelDataController.instance.Level;
-            var levelJson = LoadLevelManager.instance.ReadLevelData(level);
+            //var levelJson = LoadLevelManager.instance.ReadLevelData(level);
            // var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
 
             /*if(levelData==null)
@@ -91,7 +93,7 @@ namespace PuzzleGames
             }
             var level = LevelDataController.instance.Level;
             AudioController.PlaySound(SoundKind.UIClickButton);
-            LevelLoader.LoadLevel(level);
+            LevelLoader.LoadLevel(level, _signalBus);
         }
     }
 }

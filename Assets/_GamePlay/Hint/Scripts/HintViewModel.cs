@@ -17,17 +17,15 @@ public class HintViewModel : ViewModel
     }
 
     private HintSystem _hintSystem;
-    private AdsManager _adsManager;
 
     private SaveSystem<Data> _saveSystem;
     private Data _data = new Data();
 
-    public HintViewModel(HintSystem hintSystem, AdsManager adsManager){
+    public HintViewModel(HintSystem hintSystem){
         _saveSystem = new SaveSystem<Data>();
         _data = _saveSystem.LoadData() as Data;
 
         _hintSystem = hintSystem;
-        _adsManager = adsManager;
         StepChanged += UpdateStepCommandsCanExecute;
 
         InitCommands();
@@ -58,10 +56,8 @@ public class HintViewModel : ViewModel
     }
 
     public void ViewAd(System.Action onComplete){
-        if(UnityEngine.Application.isEditor)
-            onComplete?.Invoke();
-        else
-            _adsManager.ShowRewardedAd(onComplete, null);
+        //TODO: Minus player resourse
+        onComplete?.Invoke();
     }
 
     public async System.Threading.Tasks.Task<bool> IsInternetReachable() => await AdsManager.IsInternetReachable();
