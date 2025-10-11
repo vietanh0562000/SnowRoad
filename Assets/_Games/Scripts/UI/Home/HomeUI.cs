@@ -16,6 +16,7 @@ namespace PuzzleGames
     public class HomeUI : MonoBehaviour
     {
         [Inject] SignalBus _signalBus;
+        [Inject] PlayerData _playerData;
         [SerializeField]           private LevelScroller _levelScroller;
         [SerializeField, Space(6)] private Image         _imgBtnPlay;
         [SerializeField, Space(6)] private TMP_Text      _txtPlay;
@@ -31,7 +32,7 @@ namespace PuzzleGames
 
         private void UpdateUI()
         {
-            var level     = LevelDataController.instance.Level;
+            var level     = _playerData.LastUnlockedLevel;
             //var levelJson = LoadLevelManager.instance.ReadLevelData(level);
            // var levelData = JsonConvert.DeserializeObject<TxtLevelData>(levelJson);
 
@@ -91,7 +92,7 @@ namespace PuzzleGames
                 WindowManager.Instance.OpenWindow<RefillPanel>(onLoaded: p => { p.SetInHome(true); });
                 return;
             }
-            var level = LevelDataController.instance.Level;
+            var level =  _playerData.LastUnlockedLevel;
             AudioController.PlaySound(SoundKind.UIClickButton);
             LevelLoader.LoadLevel(level, _signalBus);
         }

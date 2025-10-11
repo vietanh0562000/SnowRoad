@@ -1,6 +1,7 @@
 using BasePuzzle.PuzzlePackages.Core;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace PuzzleGames
 {
@@ -12,6 +13,7 @@ namespace PuzzleGames
 
     public class LevelScroller : MonoBehaviour
     {
+        [Inject] PlayerData playerData;
         [SerializeField] private ScrollingLevelItem[] _levelItems;
         [SerializeField] private RectTransform        _scrollRectContent;
         [SerializeField] private Sprite[]             _unlockBgSprite;
