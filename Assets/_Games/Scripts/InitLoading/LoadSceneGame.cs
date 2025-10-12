@@ -14,18 +14,7 @@ namespace PuzzleGames
         {
             yield return null;
 
-            var dataController = LevelDataController.instance;
-            if (dataController.Level <= 1)
-            {
-                Debug.LogError("Load level 1");
-                dataController.Play();
-                LoadLevel(1);
-            }
-            else
-            {
-                Debug.LogError("Load Menu");
-                LoadSceneManager.Instance.LoadScene(nextSceneName);
-            }
+            LoadSceneManager.Instance.LoadScene(nextSceneName);
         }
 
         private void LoadLevel(int level)

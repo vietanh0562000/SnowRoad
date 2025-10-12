@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f705a0592afe3504d9331d54997ca953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Home
+  nextSceneName: Startup
 --- !u!4 &719872353
 Transform:
   m_ObjectHideFlags: 0
@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForLoading
       objectReference: {fileID: 0}
+    - target: {fileID: 3033710998197441122, guid: 228441bbc29f85a45bae4ba11b8e2367, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9128141773297988032, guid: 228441bbc29f85a45bae4ba11b8e2367, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.0978837
@@ -407,7 +411,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5643542428180901571, guid: 228441bbc29f85a45bae4ba11b8e2367, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228441bbc29f85a45bae4ba11b8e2367, type: 3}
