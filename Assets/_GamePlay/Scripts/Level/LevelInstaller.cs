@@ -1,3 +1,4 @@
+using FalconGames._GamePlay.Scripts.Level.Signals;
 using UnityEngine;
 using Zenject;
 
@@ -23,5 +24,6 @@ public class LevelInstaller : MonoInstaller
     
     private void DeclareSignals(){
         Container.DeclareSignal<LevelCompletedSignal>();
+        Container.DeclareSignal<LevelFailedSignal>();
     }
 }

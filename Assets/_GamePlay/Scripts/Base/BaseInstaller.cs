@@ -61,5 +61,6 @@ public class BaseInstaller : MonoInstaller
 
     private void BindLevelCompletedHandler(int currentLevelNumber){
         Container.Bind<LevelCompletedHandler>().AsSingle().WithArguments(currentLevelNumber).NonLazy();
+        Container.Bind<LevelFailedHandler>().AsSingle().WithArguments(currentLevelNumber).NonLazy();
     }
 }

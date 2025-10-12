@@ -1,4 +1,8 @@
 using System;
+using FalconGames._GamePlay.Scripts.Level.Signals;
+using Mono.Cecil;
+using PuzzleGames;
+using Zenject;
 
 public class StepsViewModel : ViewModel
 {
@@ -13,8 +17,10 @@ public class StepsViewModel : ViewModel
 
     private StepsRecorder _stepsRecorder;
     private IslandsUpdater _islandsUpdater;
+    
+    private  SignalBus _signalBus;
 
-    public StepsViewModel(LevelSettings levelSettings, IslandsUpdater islandsUpdater, StepsRecorder stepsRecorder, bool isBonusReceivedEarlier) {
+    public StepsViewModel(LevelSettings levelSettings, IslandsUpdater islandsUpdater, StepsRecorder stepsRecorder, bool isBonusReceivedEarlier, SignalBus signalBus) {
         _stepsRecorder = stepsRecorder;
 
         InitCommands();
@@ -25,6 +31,7 @@ public class StepsViewModel : ViewModel
 
         StartStepsCount = StepsLeft.Value = levelSettings.Steps;
         StepsForBonus.Value = levelSettings.StepsForBonus;
+        _signalBus = signalBus;
     }
 
     [Zenject.Inject]
@@ -41,8 +48,12 @@ public class StepsViewModel : ViewModel
         _stepsRecorder.RecordStep();
         StepsLeft.Value--;
 
-        if(StepsLeft == 0)
+        if (StepsLeft == 0)
+        {
             _islandsUpdater.IsIslandsUpdatingAllowed = false;
+            _signalBus.Fire(new LevelFailedSignal());
+        }
+           
     }
 
     private void OnMovedToPreviousStep(){

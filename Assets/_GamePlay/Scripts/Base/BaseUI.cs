@@ -18,6 +18,7 @@ public class BaseUI : MonoBehaviour, IPauseHandler
     [Space]
     [SerializeField] private PanelAnimator levelCompletedPanel;
     [SerializeField] private PanelAnimator allLevelsCompletedPanel;
+    [SerializeField] private PanelAnimator levelFailedPanel;
     [Space]
     [SerializeField] private PanelAnimator pausePanel;
 
@@ -105,7 +106,19 @@ public class BaseUI : MonoBehaviour, IPauseHandler
         _pauseManager.SetPaused(false);
     }
 
-    public void RestartLevel() => _signalBus.Fire<ReloadLevelSignal>();
+    public void RestartLevel()
+    {
+        IResource heart = ResourceType.Heart.Manager();
+        if (heart.GetAmount() > 0)
+        {
+            _signalBus.Fire<ReloadLevelSignal>();
+        }
+        else
+        {
+            UIToastManager.Instance.Show("Not enough heart");
+        }
+        
+    } 
     public void LoadMenu() => _signalBus.Fire<LoadMenuSignal>();
     public void LoadNextLevel() => _signalBus.Fire<LoadNextLevelSignal>();
 
@@ -122,6 +135,13 @@ public class BaseUI : MonoBehaviour, IPauseHandler
             bonusReceivedView.gameObject.SetActive(true);
             _bonusReceivedViewTimer = Timer.StartNew(this, PanelsAnimationDuration + 0.5f, () => bonusReceivedView.Show(_stepsViewModel.StepsForBonus));
         }
+    }
+
+    public void LevelFailed()
+    {
+        mainUI.DOFade(0, 0.2f).SetEase(Ease.OutCubic);
+        ChangeBackgroundVisibility(true, PanelsAnimationDuration);
+        Timer.StartNew(this, PanelsAnimationDuration, () => levelFailedPanel.gameObject.SetActive(true));
     }
 
     public void ChangeBackgroundVisibility(bool visible, float delay = 0){
