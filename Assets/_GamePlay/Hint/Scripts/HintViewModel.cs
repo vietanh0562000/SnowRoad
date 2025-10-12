@@ -1,3 +1,5 @@
+using PuzzleGames;
+
 public class HintViewModel : ViewModel
 {
     public event System.Action StepChanged;
@@ -14,6 +16,11 @@ public class HintViewModel : ViewModel
     public bool IsAdViewed {
         get => _data.IsAdViewed;
         set => _data.IsAdViewed = value;
+    }
+
+    public int GoldForStep
+    {
+        get => _hintSystem.StepsCount * 10;
     }
 
     private HintSystem _hintSystem;
@@ -56,8 +63,17 @@ public class HintViewModel : ViewModel
     }
 
     public void ViewAd(System.Action onComplete){
-        //TODO: Minus player resourse
-        onComplete?.Invoke();
+        
+        IResource goldManager = ResourceType.Gold.Manager();
+        if (goldManager.GetAmount() >= GoldForStep)
+        {
+            goldManager.Subtract(GoldForStep);
+            onComplete?.Invoke();
+        }
+        else
+        {
+            UIToastManager.Instance.Show("Not enough gold");
+        }
     }
 
     public async System.Threading.Tasks.Task<bool> IsInternetReachable() => await AdsManager.IsInternetReachable();

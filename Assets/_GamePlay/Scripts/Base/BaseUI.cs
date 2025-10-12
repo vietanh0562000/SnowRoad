@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using PuzzleGames;
 
 public class BaseUI : MonoBehaviour, IPauseHandler
 {
@@ -45,9 +46,32 @@ public class BaseUI : MonoBehaviour, IPauseHandler
         _pauseManager.Subscribe(this);
 
         mainUI.alpha = 0;
-
-        previousStepButton.Bind(stepsViewModel.MoveToPreviousStepCommand);
+        
+        previousStepButton.OnClick.AddListener(OnClickPreviousButton);
+        previousStepButton.Interactable = _stepsViewModel.MoveToPreviousStepCommand.CanExecute();
+        _stepsViewModel.MoveToPreviousStepCommand.CanExecuteChanged += () =>
+        {
+            previousStepButton.Interactable = _stepsViewModel.MoveToPreviousStepCommand.CanExecute();
+        };
         stepsView.Init(signalBus, stepsViewModel);
+    }
+
+    private void OnClickPreviousButton()
+    {
+        IResource goldManager = ResourceType.Gold.Manager();
+        if (goldManager.GetAmount() >= 10)
+        {
+            if (!_stepsViewModel.MoveToPreviousStepCommand.CanExecute())
+            {
+                UIToastManager.Instance.Show("Can't move to previous step");
+            }
+            goldManager.Subtract(10);
+            _stepsViewModel.MoveToPreviousStepCommand.Execute();
+        }
+        else
+        {
+            UIToastManager.Instance.Show("Not enough gold");
+        }
     }
     
     public void ShowMainUI() {
