@@ -87,6 +87,14 @@ namespace PuzzleGames
 
         public void ClickBtnPlay()
         {
+            var heart = ResourceType.Heart.Manager();
+            if (heart.GetAmount() <= 0)
+            {
+                UIToastManager.Instance.Show("You don't have any hearts");
+                return;
+            }
+            
+            heart.Subtract(1);
             if (!UserResourceController.instance.CanPlayLevel())
             {
                 WindowManager.Instance.OpenWindow<RefillPanel>(onLoaded: p => { p.SetInHome(true); });

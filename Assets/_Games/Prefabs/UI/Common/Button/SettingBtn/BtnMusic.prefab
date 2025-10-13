@@ -11,10 +11,22 @@ PrefabInstance:
     - target: {fileID: 265372264399805687, guid: 9916851ddac15cb428441ec20b0bd154, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f06c024d37bcb8a42b8fe78aa91a4cee, type: 3}
+      objectReference: {fileID: 21300000, guid: d8383ea70a97a4eec8c69ae29b656c6b, type: 3}
     - target: {fileID: 5686613910909894892, guid: 9916851ddac15cb428441ec20b0bd154, type: 3}
       propertyPath: m_text
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570773584401842600, guid: 9916851ddac15cb428441ec20b0bd154, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7859374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570773584401842600, guid: 9916851ddac15cb428441ec20b0bd154, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7859374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570773584401842600, guid: 9916851ddac15cb428441ec20b0bd154, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7859374
       objectReference: {fileID: 0}
     - target: {fileID: 7438725855296439023, guid: 9916851ddac15cb428441ec20b0bd154, type: 3}
       propertyPath: m_Name

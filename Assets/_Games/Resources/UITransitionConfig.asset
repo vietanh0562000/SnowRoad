@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d4fba99dc7b5d4abfe6a163b90ecf4, type: 3}
   m_Name: UITransitionConfig
   m_EditorClassIdentifier: 
-  _background: {fileID: 21300000, guid: 204ae8bb4625c9e4693326ca2910a7fa, type: 3}
+  _background: {fileID: 21300000, guid: ad059f5dd8b6042debe47bedd69d7086, type: 3}
   _progressBar: {fileID: 21300000, guid: 4bacf307f5b2cde4e94b855e25680a5b, type: 3}
   _progressBarBG: {fileID: 21300000, guid: b9e23dfa1ad71b84fa286c3e59198dfa, type: 3}
   _animationSpeed: 0.3
@@ -25,8 +25,8 @@ MonoBehaviour:
     offset: 0.012
   - position: 0.7
     offset: 0.015
-  _irisWipeBG: {fileID: 21300000, guid: 204ae8bb4625c9e4693326ca2910a7fa, type: 3}
-  _irisWipeLogo: {fileID: 21300000, guid: b1417335f5f0714429204f692aa0746f, type: 3}
+  _irisWipeBG: {fileID: 21300000, guid: ad059f5dd8b6042debe47bedd69d7086, type: 3}
+  _irisWipeLogo: {fileID: 21300000, guid: 5570f701788a74a12a1fb43305da58ee, type: 3}
   _wipeInDurationBG: 0.7
   _wipeOutDurationBG: 0.256
   _wipeInDurationLogo: 0.3

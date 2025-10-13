@@ -18,7 +18,7 @@ namespace BasePuzzle.Modules.UI.Transition.Runtime
         public void Setup(UITransitionConfig config)
         {
             _background.sprite = config.IrisWipeBG;
-            _logo.sprite = config.IrisWipeLogo;
+            //_logo.sprite = config.IrisWipeLogo;
 
             _config = config;
         }

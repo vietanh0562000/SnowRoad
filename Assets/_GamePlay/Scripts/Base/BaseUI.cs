@@ -111,6 +111,7 @@ public class BaseUI : MonoBehaviour, IPauseHandler
         IResource heart = ResourceType.Heart.Manager();
         if (heart.GetAmount() > 0)
         {
+            heart.Subtract(1);
             _signalBus.Fire<ReloadLevelSignal>();
         }
         else

@@ -11,8 +11,6 @@ namespace BasePuzzle.PuzzlePackages.Demo
         public void OnNewTabSelected(int oldIndex, int newIndex)
         {
             AudioController.PlaySound(SoundKind.UIClickButton);
-            _animations[oldIndex].PlayBackward();
-            _animations[newIndex].PlayForward();
         }
     }
 
@@ -29,18 +27,12 @@ namespace BasePuzzle.PuzzlePackages.Demo
         
         public void PlayForward()
         {
-            if (_skeleton.AnimationState.GetCurrent(0).Animation.Name == _playForward) return;
             
-            _skeleton.Initialize(false);
-            _skeleton.AnimationState.SetAnimation(0, _playForward, false);
         }
 
         public void PlayBackward()
         {
-            if (_skeleton.AnimationState.GetCurrent(0).Animation.Name == _playBackward) return;
             
-            _skeleton.Initialize(false);
-            _skeleton.AnimationState.SetAnimation(0, _playBackward, false);
         }
     }
 }

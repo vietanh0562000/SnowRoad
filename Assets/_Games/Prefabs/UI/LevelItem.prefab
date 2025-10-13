@@ -82,15 +82,15 @@ RectTransform:
   m_GameObject: {fileID: 624066120691008462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.59341, y: 0.59341, z: 0.59341}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7404403471816180308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 312, y: 264}
+  m_AnchoredPosition: {x: 0, y: 24}
+  m_SizeDelta: {x: 442, y: 289}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7205912565858963121
 CanvasRenderer:
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f569358c5fa241a448ef404f042e83b4, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 64ece1c1df69545f1a1e53d3a1589014, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -279,8 +279,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281122110
-  m_fontColor: {r: 0.24313726, g: 0.7411765, b: 0.17254902, a: 1}
+    rgba: 4290609196
+  m_fontColor: {r: 0.17254902, g: 0.5011058, b: 0.7411765, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

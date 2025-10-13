@@ -295,8 +295,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93c89b9e0d6d54b49812ccf174d2f750, type: 3}
-  m_Type: 2
+  m_Sprite: {fileID: 21300000, guid: 0f1bb7bb5eb934b769dad3566a4b1512, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4deb1bc8a1ce194d91969d09e02afab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a92b19175ba8451bbdc40e89defd93d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1252,7 +1252,11 @@ PrefabInstance:
     - target: {fileID: 7151201755047410433, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 06aced92b403844478010463a5245159, type: 3}
+      objectReference: {fileID: 21300000, guid: 4a69e9665011b4d4da7eec8d32cb8a54, type: 3}
+    - target: {fileID: 7151201755047410433, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1.45
+      objectReference: {fileID: 0}
     - target: {fileID: 8157655752448836935, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_Name
       value: BtnMoreOffer
@@ -1308,6 +1312,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 332805957687763805, guid: dbf9b88fac3d841418c397f50068efc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a21da3da151034e1a8596b043efd5622, type: 3}
     - target: {fileID: 397964623646891756, guid: dbf9b88fac3d841418c397f50068efc2, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -1334,6 +1342,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0f29473654eaf7c49ac31444a7bff6dd, type: 2}
     - target: {fileID: 3556737628784125594, guid: dbf9b88fac3d841418c397f50068efc2, type: 3}
       propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027420992034871120, guid: dbf9b88fac3d841418c397f50068efc2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4761280301458262457, guid: dbf9b88fac3d841418c397f50068efc2, type: 3}

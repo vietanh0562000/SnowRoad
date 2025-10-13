@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4740391830374814421}
   - component: {fileID: 5611639181109769542}
   - component: {fileID: 8178072327375316502}
-  - component: {fileID: 9022576157955656130}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -94,48 +93,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 128}
---- !u!114 &9022576157955656130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580778443808206272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc515ae582c0a804b945569b03c7fdba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDragStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1825010893013370305}
-        m_TargetAssemblyTypeName: FalconGames.LevelScroller, Assembly-CSharp
-        m_MethodName: OnDrag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDragEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1825010893013370305}
-        m_TargetAssemblyTypeName: FalconGames.LevelScroller, Assembly-CSharp
-        m_MethodName: OnEndDrag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1742584231242677337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1695,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1381402117489240060, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c32472104301dc349a9e8b8e1c8a3b98, type: 2}
+    - target: {fileID: 1381402117489240060, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
@@ -1844,10 +1805,10 @@ PrefabInstance:
     - target: {fileID: 4082597404338596277, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 82c0be947efbd4e408cb9a3c5423d5eb, type: 3}
+      objectReference: {fileID: 21300000, guid: 4a69e9665011b4d4da7eec8d32cb8a54, type: 3}
     - target: {fileID: 4082597404338596277, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.88
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 7151201755047410433, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_Sprite

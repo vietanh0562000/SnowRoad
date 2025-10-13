@@ -33,6 +33,8 @@ public class LevelCompletedHandler
 
     private void OnLevelCompleted(){
         _playerData.LastUnlockedLevel = _levelNumber + 1;
+        var gold = ResourceType.Gold.Manager();
+        gold.Add(20);
         if(_stepsViewModel.IsBonusReceived() && _playerData.CompletedLevelsWithBonus.Contains(_levelNumber) == false)
             _playerData.CompletedLevelsWithBonus.Add(_levelNumber);
     
