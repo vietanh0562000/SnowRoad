@@ -9,7 +9,7 @@ public class HintUI : MonoBehaviour
     [SerializeField] private CanvasGroup background;
     
     [Header("Buttons")]
-    [SerializeField] private AnimatedButton viewAdButton;
+    //[SerializeField] private AnimatedButton viewAdButton;
     [SerializeField] private AnimatedButton hintButton;
     [SerializeField] private AnimatedButton closeButton;
     
@@ -31,16 +31,16 @@ public class HintUI : MonoBehaviour
     }
 
     private async void InitHintButtons(){
-        viewAdButton.OnClick.AddListener(ViewAd);
+        //viewAdButton.OnClick.AddListener(ViewAd);
         hintButton.OnClick.AddListener(OpenPanel);
         closeButton.OnClick.AddListener(ClosePanel);
 
         hintButton.gameObject.SetActive(_hintViewModel.IsAdViewed && _hintViewModel.StepsCount > 0);
-        viewAdButton.gameObject.SetActive(false);
+        //viewAdButton.gameObject.SetActive(false);
 
         if(_hintViewModel.IsAdViewed == false && _hintViewModel.StepsCount > 0){
             bool isInternetReachable = await _hintViewModel.IsInternetReachable();
-            viewAdButton?.gameObject.SetActive(isInternetReachable);
+            //viewAdButton?.gameObject.SetActive(isInternetReachable);
         }
     }
 
@@ -51,7 +51,7 @@ public class HintUI : MonoBehaviour
     private void AdViewed(){
         _hintViewModel.IsAdViewed = true;
 
-        viewAdButton.gameObject.SetActive(false);
+        //viewAdButton.gameObject.SetActive(false);
         hintButton.gameObject.SetActive(true);
 
         OpenPanel();

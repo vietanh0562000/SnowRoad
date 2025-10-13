@@ -73,7 +73,7 @@ namespace BasePuzzle.PuzzlePackages.Navigator
             _onTabChanged?.Invoke(_selectedTabIndex, tabIndex);
             
             int indexHorizontalSnap = tabIndex;
-            MoveIcons(_selectedTabIndex, indexHorizontalSnap);
+            //MoveIcons(_selectedTabIndex, indexHorizontalSnap);
             
             //Set selected background position
             var targetX = _normalTabWidth * (indexHorizontalSnap + 1) + _horizontalLayoutGroup.spacing * indexHorizontalSnap;
@@ -104,7 +104,7 @@ namespace BasePuzzle.PuzzlePackages.Navigator
                 _tabs[i].SetIndex(i - 1);
             }*/
 
-            MoveIcons(_selectedTabIndex, newTab.Index);
+            //MoveIcons(_selectedTabIndex, newTab.Index);
             
             _selectedTabIndex = newTab.Index;
             _horizontalScrollSnap.GoToScreen(newTab.Index);

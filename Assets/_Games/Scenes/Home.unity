@@ -4026,6 +4026,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1844597571790173452, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
+      propertyPath: '_bgBtn.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a69e9665011b4d4da7eec8d32cb8a54, type: 3}
+    - target: {fileID: 1844597571790173452, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
+      propertyPath: '_bgBtn.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a69e9665011b4d4da7eec8d32cb8a54, type: 3}
+    - target: {fileID: 1844597571790173452, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
+      propertyPath: '_bgBtn.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a69e9665011b4d4da7eec8d32cb8a54, type: 3}
+    - target: {fileID: 1844597571790173452, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
       propertyPath: _collectingBtnPlayFX
       value: 
       objectReference: {fileID: 448814917}
@@ -4188,6 +4200,10 @@ PrefabInstance:
     - target: {fileID: 4079988160597199722, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669628631649906694, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4799853298308175807, guid: 69b5ac2436c0318408c95214b831b8b6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4748,7 +4764,7 @@ MonoBehaviour:
   _numberOfTabs: 3
   _defaultTab: 1
   _tabHeight: 210
-  _iconOffsetY: 85
+  _iconOffsetY: 0
   _iconNormalScale: {x: 1.1, y: 1.1}
   _iconUpScale: {x: 1.1, y: 1.1}
 --- !u!114 &8485439373781618929
