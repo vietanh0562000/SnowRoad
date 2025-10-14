@@ -24,6 +24,7 @@
         public static string GetPurchasePKG(this PurchaseID purchaseID)
         {
             var pkg = Application.identifier.ToLower();
+            Debug.Log(pkg);
             return string.Join('.', pkg, purchaseID.ToString());
         }
     }
