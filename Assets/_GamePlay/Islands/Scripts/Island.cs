@@ -51,7 +51,7 @@ public class Island : MonoBehaviour
         _currentRenderer = Type == IslandType.Corner ? cornerRenderer : defaultRenderer;
 
         Material material = null;
-        if((Application.isEditor && UnityEditor.EditorApplication.isPlaying) || Application.isEditor == false)
+        //if((Application.isEditor && UnityEditor.EditorApplication.isPlaying) || Application.isEditor == false)
             material = _currentRenderer.material;
         
         bool isOutputEnabled = Type != IslandType.Finish && Type != IslandType.Empty;

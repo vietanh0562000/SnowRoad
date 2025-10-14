@@ -1,7 +1,4 @@
-using System;
 using FalconGames._GamePlay.Scripts.Level.Signals;
-using Mono.Cecil;
-using PuzzleGames;
 using Zenject;
 
 public class StepsViewModel : ViewModel

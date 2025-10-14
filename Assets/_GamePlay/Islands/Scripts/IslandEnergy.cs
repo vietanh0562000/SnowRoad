@@ -22,10 +22,8 @@ public class IslandEnergy : MonoBehaviour
     private Color _defaultEmissionColor;
 
     public void Init(Material rendererMaterial, bool isOutputEnabled, bool isInputEnabled){
-        if(Application.isEditor && UnityEditor.EditorApplication.isPlaying){
-            _rendererMaterial = rendererMaterial;
-            _defaultEmissionColor = _rendererMaterial.GetColor("_EmissionColor");
-        }
+        _rendererMaterial = rendererMaterial;
+        _defaultEmissionColor = _rendererMaterial.GetColor("_EmissionColor");
 
         IsOutputEnabled = isOutputEnabled;
         IsInputEnabled = isInputEnabled;
