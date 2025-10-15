@@ -21,9 +21,13 @@ public class ProjectLoadedHandler
         SaveSystem<PlayerData> saveSystem = new SaveSystem<PlayerData>();
         data = saveSystem.LoadData();
 
-        if(data != null && data.TutorialCompleted)
+        if (data != null && data.TutorialCompleted)
             _scenesLoader.LoadMenu();
         else
+        {
+            data.TutorialCompleted = true;
             _scenesLoader.LoadTutorial();
+        }
+            
     }
 }

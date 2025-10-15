@@ -15,14 +15,21 @@ namespace PuzzleGames
 
     public class HomeUI : MonoBehaviour
     {
-        [Inject] SignalBus _signalBus;
-        [Inject] PlayerData _playerData;
+        private SignalBus _signalBus;
+        private PlayerData _playerData;
         [SerializeField]           private LevelScroller _levelScroller;
         [SerializeField, Space(6)] private Image         _imgBtnPlay;
         [SerializeField, Space(6)] private TMP_Text      _txtPlay;
 
         [SerializeField] private List<Sprite> _bgBtn;
         [SerializeField] private List<Material> _textColors;
+
+        [Inject]
+        private void Construct(SignalBus signalBus,  PlayerData playerData)
+        {
+            _signalBus = signalBus;
+            _playerData = playerData;
+        }
 
         private void OnEnable()
         {

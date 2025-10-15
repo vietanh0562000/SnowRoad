@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialUI : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class TutorialUI : MonoBehaviour
 
     [Zenject.Inject]
     private void Init(Zenject.SignalBus signalBus){
-        loadMenuButton.OnClick.AddListener(() => signalBus.Fire<LoadMenuSignal>());
+        loadMenuButton.OnClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("_Games/Scenes/Home");
+        });
 
         background.alpha = 0;
     }
