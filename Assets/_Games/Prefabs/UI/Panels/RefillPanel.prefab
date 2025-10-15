@@ -168,7 +168,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.4
+  m_fontSize: 77.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite name="coin"> 900
+  m_text: <sprite=0> 900
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ea3ec82d47fb4b541a939bfd92ec53eb, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ef3a5d45bb5159a4f8e1aa918b001011, type: 2}
@@ -481,7 +481,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 0391c6f16c38f46a499c230780360a1c, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -1014,7 +1014,7 @@ RectTransform:
   m_GameObject: {fileID: 6245753976385505143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5058099, y: 1.5058099, z: 1.3094}
+  m_LocalScale: {x: 3.6353264, y: 3.6353264, z: 3.1611536}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 904743645821296681}
@@ -1024,7 +1024,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 160}
-  m_SizeDelta: {x: 225, y: 225}
+  m_SizeDelta: {x: 99, y: 89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1140454124743934153
 CanvasRenderer:
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8095045622368229728, guid: 1c242e334fd7ed54594b44d21dfb48a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d53f166aaa1404a588ef45a02bc0ae09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1187,7 +1187,7 @@ RectTransform:
   m_GameObject: {fileID: 7085625740731571226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.54626274, y: 0.54626274, z: 0.54626274}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5039459607991439045}
@@ -1899,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778970506936399622, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 493.2
+      value: 965.2
       objectReference: {fileID: 0}
     - target: {fileID: 3778970506936399622, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1935,7 +1935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778970506936399622, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -280
+      value: -516
       objectReference: {fileID: 0}
     - target: {fileID: 3778970506936399622, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2145,6 +2145,10 @@ PrefabInstance:
     - target: {fileID: 8157655752448836935, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
       propertyPath: m_Name
       value: BtnGet1Heart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157655752448836935, guid: eb64e4c9c53008747be1b43c77ee0502, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

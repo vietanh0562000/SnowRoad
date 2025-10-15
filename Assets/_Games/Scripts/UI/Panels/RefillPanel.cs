@@ -44,12 +44,12 @@ namespace PuzzleGames
             if (UserResourceController.instance.UserResource.gold < refillPrice)
             {
                 txtPrice.fontMaterial = _cantBuy;
-                txtPrice.text         = $" <sprite=1> <color=\"red\"> {refillPrice}</color>";
+                txtPrice.text         = $" <sprite=0> <color=\"red\"> {refillPrice}</color>";
             }
             else
             {
                 txtPrice.fontMaterial = _canBuy;
-                txtPrice.text         = $" <sprite=1> {refillPrice}";
+                txtPrice.text         = $" <sprite=0> {refillPrice}";
             }
         }
 
