@@ -1,5 +1,7 @@
+using System.Collections;
 using FalconGames._GamePlay.Scripts.Level.Signals;
 using PuzzleGames;
+using UnityEngine;
 
 public class LevelFailedHandler
 {
@@ -13,11 +15,14 @@ public class LevelFailedHandler
     private StepsViewModel _stepsViewModel;
     private LevelsInfoProvider _levelsInfoProvider;
     
+    private bool _isLevelCompleted;
+    
     [Zenject.Inject]
     private void Init(LevelsInfoProvider levelsInfoProvider, PlayerData playerData, StepsViewModel stepsViewModel) {
         _levelsInfoProvider = levelsInfoProvider;
         _stepsViewModel = stepsViewModel;
         _playerData = playerData;
+        _isLevelCompleted = false;
     }
 
     [Zenject.Inject]
@@ -31,12 +36,23 @@ public class LevelFailedHandler
     private void InitSignals(Zenject.SignalBus signalBus, int levelNumber){
         _levelNumber = levelNumber;
 
-        signalBus.Subscribe<LevelFailedSignal>(OnLevelCompleted);
+        signalBus.Subscribe<LevelCompletedSignal>(()  => _isLevelCompleted = true);
+        signalBus.Subscribe<OutOfMoveSignal>(OnOutOfMove);
     }
 
-    private void OnLevelCompleted(){
-        IResource heart = ResourceType.Heart.Manager();
-        heart.Subtract(1);
-        _baseUI.LevelFailed();
+    private void OnOutOfMove()
+    {
+        _baseUI.StartCoroutine(OnLevelCompleted());
+    }
+
+    private IEnumerator OnLevelCompleted()
+    {
+        yield return new WaitForSeconds(1);
+        if (!_isLevelCompleted)
+        {
+            IResource heart = ResourceType.Heart.Manager();
+            heart.Subtract(1);
+            _baseUI.LevelFailed();
+        }
     }
 }

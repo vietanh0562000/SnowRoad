@@ -45,6 +45,8 @@ public class BaseUI : MonoBehaviour, IPauseHandler
         _pauseManager = pauseManager;
 
         _pauseManager.Subscribe(this);
+        
+        _signalBus.Subscribe<IslandUpdatingSignal>(UpdateInteract);
 
         mainUI.alpha = 0;
         
@@ -55,6 +57,11 @@ public class BaseUI : MonoBehaviour, IPauseHandler
             previousStepButton.Interactable = _stepsViewModel.MoveToPreviousStepCommand.CanExecute();
         };
         stepsView.Init(signalBus, stepsViewModel);
+    }
+
+    private void UpdateInteract()
+    {
+        previousStepButton.Interactable = _stepsViewModel.MoveToPreviousStepCommand.CanExecute();
     }
 
     private void OnClickPreviousButton()
@@ -109,7 +116,7 @@ public class BaseUI : MonoBehaviour, IPauseHandler
     public void RestartLevel()
     {
         IResource heart = ResourceType.Heart.Manager();
-        if (heart.GetAmount() > 0)
+        if (heart.GetAmount() > 0 ||  heart.IsInFreeMode)
         {
             heart.Subtract(1);
             _signalBus.Fire<ReloadLevelSignal>();

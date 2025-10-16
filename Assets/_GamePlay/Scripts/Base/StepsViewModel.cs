@@ -1,3 +1,4 @@
+using System.Collections;
 using FalconGames._GamePlay.Scripts.Level.Signals;
 using Zenject;
 
@@ -16,6 +17,8 @@ public class StepsViewModel : ViewModel
     private IslandsUpdater _islandsUpdater;
     
     private  SignalBus _signalBus;
+
+    private bool _levelCompleted;
 
     public StepsViewModel(LevelSettings levelSettings, IslandsUpdater islandsUpdater, StepsRecorder stepsRecorder, bool isBonusReceivedEarlier, SignalBus signalBus) {
         _stepsRecorder = stepsRecorder;
@@ -38,7 +41,6 @@ public class StepsViewModel : ViewModel
 
     private void InitCommands(){
         MoveToPreviousStepCommand = new DelegateCommand(OnMovedToPreviousStep, _stepsRecorder.CanMoveToPrevStep);
-        _stepsRecorder.StepRecorded += MoveToPreviousStepCommand.InvokeCanExecuteChanged;
     }
 
     private void OnIslandUpdating(){
@@ -48,8 +50,8 @@ public class StepsViewModel : ViewModel
         if (StepsLeft == 0)
         {
             _islandsUpdater.IsIslandsUpdatingAllowed = false;
-            _signalBus.Fire(new LevelFailedSignal());
-        }
+            _signalBus.Fire(new OutOfMoveSignal());
+        }   
            
     }
 

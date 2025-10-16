@@ -25,5 +25,6 @@ public class LevelInstaller : MonoInstaller
     private void DeclareSignals(){
         Container.DeclareSignal<LevelCompletedSignal>();
         Container.DeclareSignal<LevelFailedSignal>();
+        Container.DeclareSignal<OutOfMoveSignal>();
     }
 }

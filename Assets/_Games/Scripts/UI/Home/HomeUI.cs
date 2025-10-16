@@ -95,7 +95,7 @@ namespace PuzzleGames
         public void ClickBtnPlay()
         {
             var heart = ResourceType.Heart.Manager();
-            if (heart.GetAmount() <= 0)
+            if (heart.GetAmount() <= 0 && !heart.IsInFreeMode)
             {
                 UIToastManager.Instance.Show("You don't have any hearts");
                 return;
